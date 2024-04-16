@@ -21,7 +21,6 @@ loki:
     jsonData: "{}"
     uid: ""
 
-
 promtail:
   enabled: true
   config:
@@ -31,10 +30,10 @@ promtail:
       - url: http://{{ .Release.Name }}:3100/loki/api/v1/push
 
 fluent-bit:
-  enabled: true
+  enabled: false
 
 grafana:
-  enabled: false
+  enabled: true
   sidecar:
     datasources:
       label: ""
@@ -109,4 +108,3 @@ proxy:
   http_proxy: ""
   https_proxy: ""
   no_proxy: ""
-

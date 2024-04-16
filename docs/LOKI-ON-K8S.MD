@@ -28,3 +28,11 @@ $ kubectl get all -n monitoring
 ```
 
 ### Step 5: Connecting Grafana
+```sh
+$ kubectl port-forward service/loki-grafana 3000:80 -n monitoring
+
+$ kubectl get secrets loki-grafana -n monitoring -o jsonpath="{.data.admin-user}" | base64 -d
+
+$ kubectl get secrets loki-grafana -n monitoring -o jsonpath="{.data.admin-password}" | base64 -d
+
+```
